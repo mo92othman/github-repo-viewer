@@ -1,11 +1,7 @@
-type RepoDetailProps = {
-  params: { name: string };
-};
-
-export default function RepoDetailPage({ params }: RepoDetailProps) {
+export default function RepoDetailPage() {
   return (
     <div>
-      <h1>Repo Detail: {params.name}</h1>
+      <h1>Repo Detail: </h1>
     </div>
   );
 }
