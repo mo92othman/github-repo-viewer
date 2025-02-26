@@ -10,3 +10,13 @@ export type Repository = {
   name: string;
   description: string;
 };
+
+export type Commit = {
+  sha: string;
+  commit: {
+    message: string;
+    author: {
+      name: string;
+    };
+  };
+};
