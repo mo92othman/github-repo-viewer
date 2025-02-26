@@ -5,3 +5,13 @@ export const fetchUserData = async () => {
   }
   return response.json();
 };
+
+export const fetchUserRepos = async () => {
+  const response = await fetch(
+    'https://api.github.com/users/JakeWharton/repos',
+  );
+  if (!response.ok) {
+    throw new Error('Error fetching repositories');
+  }
+  return response.json();
+};
