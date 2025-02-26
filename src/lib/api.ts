@@ -23,3 +23,13 @@ export async function fetchCommits(repoName: string) {
   if (!response.ok) throw new Error('Failed to fetch commits');
   return await response.json();
 }
+
+export async function fetchRepoDetails(repoName: string) {
+  const response = await fetch(
+    `https://api.github.com/repos/JakeWharton/${repoName}`,
+  );
+
+  if (!response.ok) throw new Error('Failed to fetch repo details');
+
+  return response.json();
+}
