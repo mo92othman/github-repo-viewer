@@ -28,7 +28,8 @@ export default function RepoDetailPage() {
     <div className="p-6">
       <h1 className="text-3xl font-bold">{name}</h1>
       <p className="w-full bg-gray-900 p-6 rounded-lg">
-        {repoDetails?.description}
+        <span className="font-bold">Description:</span>
+        <div className="mt-2">{repoDetails?.description}</div>
       </p>
       <h2 className="text-xl font-semibold mt-4">Last 5 Commits:</h2>
       <ul className="mt-2">
