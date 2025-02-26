@@ -4,3 +4,9 @@ export type User = {
   bio: string;
   name: string;
 };
+
+export type Repository = {
+  id: number;
+  name: string;
+  description: string;
+};
