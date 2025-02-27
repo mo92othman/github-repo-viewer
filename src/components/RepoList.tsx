@@ -2,6 +2,7 @@ import { useRepos } from '@/hooks/useRepos';
 import RepoListItem from './RepoListItem';
 import { useState } from 'react';
 import PaginationButton from '@/components/common/PaginationButton';
+import { RiGitRepositoryCommitsFill } from 'react-icons/ri';
 
 export default function RepoList() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -30,8 +31,14 @@ export default function RepoList() {
   console.log(repos?.length);
 
   return (
-    <div className="ml-8 mr-8 mt-4 mb-8">
-      <h1 className="w-full bg-gray-900 p-6 rounded-lg">Repo List</h1>
+    <div className="ml-8 mr-8 mt-4 mb-8 ">
+      <div className="flex items-center justify-center ">
+        <div className="flex items-center justify-center space-x-2 w-1/2 bg-gray-300 p-6 rounded-lg dark:bg-gray-800">
+          <h1 className="text-3xl">Repo List</h1>
+          <RiGitRepositoryCommitsFill size={30} />
+        </div>
+      </div>
+
       <ul className="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-4">
         {paginatedRepos?.map((repo) => (
           <RepoListItem
