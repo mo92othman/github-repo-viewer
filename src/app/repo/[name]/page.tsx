@@ -29,8 +29,8 @@ export default function RepoDetailPage() {
       <div className="p-6 text-center">
         <h1 className="text-3xl font-bold">{name}</h1>
       </div>
-      <p className="w-full bg-gray-900 p-6 rounded-lg">
-        <span className="font-bold bg-blue-400 p-2 px-4 rounded-full mr-2">
+      <p className="w-full bg-gray-400 dark:bg-gray-600 p-6 rounded-lg">
+        <span className="font-bold text-gray-100  bg-blue-950 p-2 px-4 rounded-full mr-2">
           Description:
         </span>
         {repoDetails?.description}
