@@ -3,6 +3,7 @@ import RepoListItem from './RepoListItem';
 import { useState } from 'react';
 import PaginationButton from '@/components/common/PaginationButton';
 import { RiGitRepositoryCommitsFill } from 'react-icons/ri';
+import { ClipLoader } from 'react-spinners';
 
 export default function RepoList() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -22,7 +23,12 @@ export default function RepoList() {
     }
   };
 
-  if (isLoading) return <p>Loading repositories...</p>;
+  if (isLoading)
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <ClipLoader color="#3498db" size={40} />
+      </div>
+    );
   if (error) return <p>Error loading repositories</p>;
 
   return (
