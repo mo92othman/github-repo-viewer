@@ -5,12 +5,16 @@ import PaginationButton from '@/components/common/PaginationButton';
 import { RiGitRepositoryCommitsFill } from 'react-icons/ri';
 import { ClipLoader } from 'react-spinners';
 
-export default function RepoList() {
+export default function RepoList({ username }: { username: string }) {
   const [currentPage, setCurrentPage] = useState(1);
   const perPage = 12;
 
   // Fetch repos with pagination parameters
-  const { data: repos = [], isLoading, error } = useRepos(currentPage, perPage);
+  const {
+    data: repos = [],
+    isLoading,
+    error,
+  } = useRepos(username, currentPage, perPage);
 
   // Handle pagination logic
   const handleNextPage = () => {

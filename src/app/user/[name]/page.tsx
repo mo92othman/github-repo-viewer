@@ -22,7 +22,7 @@ export default function User() {
     <div className="mt-8">
       {/* <SearchUserField /> */}
       <UserInfo user={user} />
-      <RepoList />
+      <RepoList username={typeof name === 'string' ? name : ''} />
     </div>
   );
 }

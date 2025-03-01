@@ -6,9 +6,13 @@ export const fetchUserData = async (username: string) => {
   return response.json();
 };
 
-export const fetchUserRepos = async (page: number, perPage: number) => {
+export const fetchUserRepos = async (
+  username: string,
+  page: number,
+  perPage: number,
+) => {
   const response = await fetch(
-    `https://api.github.com/users/JakeWharton/repos?page=${page}&per_page=${perPage}`,
+    `https://api.github.com/users/${username}/repos?page=${page}&per_page=${perPage}`,
   );
   if (!response.ok) {
     throw new Error('Error fetching repositories');
