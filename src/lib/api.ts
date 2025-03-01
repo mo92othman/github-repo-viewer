@@ -1,5 +1,5 @@
-export const fetchUserData = async () => {
-  const response = await fetch('https://api.github.com/users/JakeWharton');
+export const fetchUserData = async (username: string) => {
+  const response = await fetch(`https://api.github.com/users/${username}`);
   if (!response.ok) {
     throw new Error('Error fetching user data');
   }
