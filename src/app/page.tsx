@@ -20,7 +20,7 @@ export default function Home() {
 
       <button
         onClick={() => router.push('/user/JakeWharton')}
-        className="px-4 py-2 bg-blue-900 text-white rounded-lg border-white hover:bg-blue-600"
+        className="px-4 py-2 bg-blue-900 text-white rounded-lg border-white hover:bg-blue-600 mt-12"
       >
         View Jake Wharton
       </button>

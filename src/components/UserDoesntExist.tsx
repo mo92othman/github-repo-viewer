@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function UserDoesntExist() {
   return (
-    <div className="flex flex-col items-center justify-center  text-center space-y-4">
+    <div className="flex flex-col items-center justify-center  text-center space-y-4 mt-56">
       <Image
         src={GitHubLogoCat}
         alt="User does not exist"

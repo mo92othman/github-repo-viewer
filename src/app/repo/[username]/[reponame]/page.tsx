@@ -3,12 +3,10 @@ import { useParams } from 'next/navigation';
 import { useCommits } from '@/hooks/useCommit';
 import { useRepoDetails } from '@/hooks/useRepoDetails';
 import { TextRevealTW } from '@/components/common/TextRevealTW';
+import { ClipLoader } from 'react-spinners';
 
 export default function RepoDetailPage() {
   const { username, reponame } = useParams();
-
-  console.log('username', username);
-  console.log('reponame', reponame);
 
   const {
     data: commits,
@@ -23,7 +21,11 @@ export default function RepoDetailPage() {
   } = useRepoDetails(username as string, reponame as string);
 
   if (repoLoading || commitsLoading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <ClipLoader color="#3498db" size={40} />
+      </div>
+    );
   }
   if (repoError || commitsError) {
     return <p>Error fetching data</p>;
@@ -38,7 +40,7 @@ export default function RepoDetailPage() {
         <span className="font-bold text-gray-100  bg-blue-950 p-2 px-4 rounded-full mr-2 max-h-10">
           Description:
         </span>
-        {repoDetails?.description}
+        {repoDetails?.description || 'No description available'}
       </p>
       <h2 className="text-xl font-semibold mt-8">Last 5 Commits:</h2>
       <ul className="mt-2">

@@ -38,7 +38,7 @@ export default function RepoList({ username }: { username: string }) {
   return (
     <div className="ml-8 mr-8 mt-4 mb-8">
       <div className="flex items-center justify-center">
-        <div className="flex items-center justify-center space-x-2 w-full sm:w-1/2 bg-gray-300 p-6 rounded-lg dark:bg-gray-800">
+        <div className="flex items-center justify-center space-x-2 w-full sm:w-1/2 bg-gray-300 p-6 rounded-lg dark:bg-gray-600">
           <h1 className="text-3xl">Repo List</h1>
           <RiGitRepositoryCommitsFill size={30} />
         </div>
