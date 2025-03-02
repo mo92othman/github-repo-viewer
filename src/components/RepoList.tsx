@@ -48,6 +48,7 @@ export default function RepoList({ username }: { username: string }) {
         {repos?.map((repo) => (
           <RepoListItem
             key={repo.id}
+            username={username}
             name={repo.name}
             description={repo.description}
           />

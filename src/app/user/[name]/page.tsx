@@ -8,7 +8,6 @@ import { ClipLoader } from 'react-spinners';
 
 export default function User() {
   const { name } = useParams();
-  console.log(name);
   const { data: user, isError, isLoading } = useUser(name as string);
 
   if (isLoading)
@@ -22,7 +21,7 @@ export default function User() {
     <div className="mt-8">
       {/* <SearchUserField /> */}
       <UserInfo user={user} />
-      <RepoList username={typeof name === 'string' ? name : ''} />
+      <RepoList username={name as string} />
     </div>
   );
 }
