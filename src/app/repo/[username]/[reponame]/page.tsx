@@ -4,19 +4,22 @@ import { useCommits } from '@/hooks/useCommit';
 import { useRepoDetails } from '@/hooks/useRepoDetails';
 
 export default function RepoDetailPage() {
-  const { name } = useParams();
+  const { username, reponame } = useParams();
+
+  console.log('username', username);
+  console.log('reponame', reponame);
 
   const {
     data: commits,
     isLoading: commitsLoading,
     isError: commitsError,
-  } = useCommits(name as string);
+  } = useCommits(username as string, reponame as string);
 
   const {
     data: repoDetails,
     isLoading: repoLoading,
     isError: repoError,
-  } = useRepoDetails(name as string);
+  } = useRepoDetails(username as string, reponame as string);
 
   if (repoLoading || commitsLoading) {
     return <p>Loading...</p>;
@@ -27,7 +30,7 @@ export default function RepoDetailPage() {
   return (
     <div className="p-6">
       <div className="p-6 text-center">
-        <h1 className="text-3xl font-bold">{name}</h1>
+        <h1 className="text-3xl font-bold">{reponame}</h1>
       </div>
       <p className="w-full bg-gray-400 dark:bg-gray-600 p-6 rounded-lg">
         <span className="font-bold text-gray-100  bg-blue-950 p-2 px-4 rounded-full mr-2">

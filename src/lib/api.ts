@@ -20,17 +20,17 @@ export const fetchUserRepos = async (
   return response.json();
 };
 
-export async function fetchCommits(repoName: string) {
+export async function fetchCommits(username: string, repoName: string) {
   const response = await fetch(
-    `https://api.github.com/repos/JakeWharton/${repoName}/commits?per_page=5`,
+    `https://api.github.com/repos/${username}/${repoName}/commits?per_page=5`,
   );
   if (!response.ok) throw new Error('Failed to fetch commits');
   return await response.json();
 }
 
-export async function fetchRepoDetails(repoName: string) {
+export async function fetchRepoDetails(username: string, repoName: string) {
   const response = await fetch(
-    `https://api.github.com/repos/JakeWharton/${repoName}`,
+    `https://api.github.com/repos/${username}/${repoName}`,
   );
 
   if (!response.ok) throw new Error('Failed to fetch repo details');
