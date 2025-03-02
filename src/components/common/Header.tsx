@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import SearchUserField from '@/components/common/SearchUserField';
 import Link from 'next/link';
+import { GitHubLogo } from '@/constants';
 
 export default function Header() {
   return (
@@ -9,7 +10,7 @@ export default function Header() {
       <div className="flex flex-col sm:flex-row items-center sm:justify-between space-y-4 sm:space-y-0">
         <Link href="/" className="flex items-center space-x-2">
           <Image
-            src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_960_720.png"
+            src={GitHubLogo}
             alt="GitHub Logo"
             width={40}
             height={40}

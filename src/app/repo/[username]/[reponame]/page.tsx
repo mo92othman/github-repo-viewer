@@ -2,6 +2,7 @@
 import { useParams } from 'next/navigation';
 import { useCommits } from '@/hooks/useCommit';
 import { useRepoDetails } from '@/hooks/useRepoDetails';
+import { TextRevealTW } from '@/components/common/TextRevealTW';
 
 export default function RepoDetailPage() {
   const { username, reponame } = useParams();
@@ -30,7 +31,8 @@ export default function RepoDetailPage() {
   return (
     <div className="p-6">
       <div className="p-6 text-center">
-        <h1 className="text-3xl font-bold">{reponame}</h1>
+        {/* <h1 className="text-3xl font-bold">{reponame}</h1> */}
+        <TextRevealTW text={reponame as string} />
       </div>
       <p className="w-full bg-gray-400 dark:bg-gray-600 p-6 rounded-lg flex items-center r">
         <span className="font-bold text-gray-100  bg-blue-950 p-2 px-4 rounded-full mr-2 max-h-10">
@@ -38,7 +40,7 @@ export default function RepoDetailPage() {
         </span>
         {repoDetails?.description}
       </p>
-      <h2 className="text-xl font-semibold mt-4">Last 5 Commits:</h2>
+      <h2 className="text-xl font-semibold mt-8">Last 5 Commits:</h2>
       <ul className="mt-2">
         {commits?.map((commit) => (
           <li key={commit.sha} className="border p-2 mt-2 rounded">
