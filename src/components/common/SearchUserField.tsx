@@ -22,7 +22,7 @@ export default function SearchUserField() {
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         placeholder=" Or search another user ..."
-        className="px-4 py-2 border rounded-lg"
+        className="px-4 border rounded-lg text-blue-950"
       />
       <button
         type="submit"

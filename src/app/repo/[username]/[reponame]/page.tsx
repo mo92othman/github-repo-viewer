@@ -32,8 +32,8 @@ export default function RepoDetailPage() {
       <div className="p-6 text-center">
         <h1 className="text-3xl font-bold">{reponame}</h1>
       </div>
-      <p className="w-full bg-gray-400 dark:bg-gray-600 p-6 rounded-lg">
-        <span className="font-bold text-gray-100  bg-blue-950 p-2 px-4 rounded-full mr-2">
+      <p className="w-full bg-gray-400 dark:bg-gray-600 p-6 rounded-lg flex items-center r">
+        <span className="font-bold text-gray-100  bg-blue-950 p-2 px-4 rounded-full mr-2 max-h-10">
           Description:
         </span>
         {repoDetails?.description}
@@ -43,7 +43,7 @@ export default function RepoDetailPage() {
         {commits?.map((commit) => (
           <li key={commit.sha} className="border p-2 mt-2 rounded">
             <p className="font-semibold">{commit.commit.author.name}</p>
-            <p className="text-gray-600">{commit.commit.message}</p>
+            <p className="text-gray-400">{commit.commit.message}</p>
           </li>
         ))}
       </ul>
