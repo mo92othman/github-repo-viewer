@@ -19,7 +19,7 @@ export default function User() {
   if (isError || !user) return <p>Error fetching user data</p>;
   return (
     <div className="mt-8">
-      {/* <SearchUserField /> */}
+      <SearchUserField />
       <UserInfo user={user} />
       <RepoList username={name as string} />
     </div>
