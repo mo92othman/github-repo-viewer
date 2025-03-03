@@ -5,12 +5,16 @@ import PaginationButton from '@/components/common/PaginationButton';
 import { RiGitRepositoryCommitsFill } from 'react-icons/ri';
 import { ClipLoader } from 'react-spinners';
 
-export default function RepoList() {
+export default function RepoList({ username }: { username: string }) {
   const [currentPage, setCurrentPage] = useState(1);
   const perPage = 12;
 
   // Fetch repos with pagination parameters
-  const { data: repos = [], isLoading, error } = useRepos(currentPage, perPage);
+  const {
+    data: repos = [],
+    isLoading,
+    error,
+  } = useRepos(username, currentPage, perPage);
 
   // Handle pagination logic
   const handleNextPage = () => {
@@ -34,7 +38,7 @@ export default function RepoList() {
   return (
     <div className="ml-8 mr-8 mt-4 mb-8">
       <div className="flex items-center justify-center">
-        <div className="flex items-center justify-center space-x-2 w-1/2 bg-gray-300 p-6 rounded-lg dark:bg-gray-800">
+        <div className="flex items-center justify-center space-x-2 w-full sm:w-1/2 bg-gray-300 p-6 rounded-lg dark:bg-gray-600">
           <h1 className="text-3xl">Repo List</h1>
           <RiGitRepositoryCommitsFill size={30} />
         </div>
@@ -44,6 +48,7 @@ export default function RepoList() {
         {repos?.map((repo) => (
           <RepoListItem
             key={repo.id}
+            username={username}
             name={repo.name}
             description={repo.description}
           />
